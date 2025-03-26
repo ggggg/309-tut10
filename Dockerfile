@@ -23,6 +23,7 @@ FROM node:20-alpine AS prod
 COPY --from=builder /app/next.config.mjs ./
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/package-lock.json ./package-lock.json
 COPY --from=builder /app/.next ./
 
 COPY --from=builder /app/prisma ./prisma
