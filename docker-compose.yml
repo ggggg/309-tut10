@@ -34,7 +34,8 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
-      - DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-password}@db:5432/${POSTGRES_DB:-quizdb}?schema=public
+      # - DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-password}@db:5432/${POSTGRES_DB:-quizdb}?schema=public
+      - DATABASE_URL=${DATABASE_URL}
     networks:
       - quiz-network
 
