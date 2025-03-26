@@ -20,7 +20,7 @@ FROM node:20-alpine AS prod
 
 # TODO: Copy built assets and necessary files
 
-COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/next.config.mjs ./
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/.next/standalone ./
