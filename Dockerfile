@@ -31,7 +31,7 @@ COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 
 # TODO: SET ENV variables
-# ENV 
+ENV DATABASE_URL
 
 # TODO: install production dependencies
 RUN npm ci
