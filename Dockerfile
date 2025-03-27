@@ -42,8 +42,7 @@ EXPOSE 3000
 # Create start script
 RUN echo '#!/bin/sh' > /app/start.sh && \
     echo 'npx prisma migrate deploy' >> /app/start.sh && \
-    echo 'npm run' >> /app/start.sh && \
-    echo 'npm run start' >> /app/start.sh && \
+    echo 'npm --prefix /app start' >> /app/start.sh && \
     chmod +x /app/start.sh
 
 # Start the application
